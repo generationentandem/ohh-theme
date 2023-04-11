@@ -108,55 +108,6 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
                 'after_title'   => '</h6>',
             )
         );
-
-        // Footer Widgets for Generationenfestival
-        register_sidebar(
-            array(
-                'id'            => 'generationenfestival-footer-widgets-1',
-                'name'          => __( 'Generationenfestival Footer 1 (Logo)', 'foundationpress' ),
-                'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
-            )
-        );
-
-        register_sidebar(
-            array(
-                'id'            => 'generationenfestival-footer-widgets-2',
-                'name'          => __( 'Generationenfestival Footer 2 (Kontakt)', 'foundationpress' ),
-                'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
-            )
-        );
-
-        register_sidebar(
-            array(
-                'id'            => 'generationenfestival-footer-widgets-3',
-                'name'          => __( 'Generationenfestival Footer 3 (Info)', 'foundationpress' ),
-                'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
-            )
-        );
-
-        register_sidebar(
-            array(
-                'id'            => 'generationenfestival-footer-widgets-4',
-                'name'          => __( 'Generationenfestival Footer 4 (Folge uns)', 'foundationpress' ),
-                'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
-            )
-        );
     }
 
     add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );
