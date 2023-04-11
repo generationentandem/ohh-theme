@@ -21,7 +21,6 @@ function und_custom_dashboard_widgets() {
 	wp_add_dashboard_widget('und_custom_dashboard-calendar','UND Kalender','und_dashboard_calendar',null);
 	if ( have_rows( 'und_ical_urls', 'option' ) ) {
 		$rows = get_field( 'und_ical_urls', 'option', true );
-
 	}
 }
 
@@ -37,6 +36,4 @@ function und_dashboard_calendar($object,$args) {
 	echo '<a href="https://cloud.generationentandem.ch/apps/calendar/p/GzR9ZjoJB3DYicLT" target="_blank">UND-Veranstaltungen (Nextcloud)</a><br/>';
 	echo '<a href="https://cloud.generationentandem.ch/apps/calendar/p/ays4znQBg2LCRAiw" target="_blank">UND-Workflow (Nextcloud)</a><br/>';
 	echo '<a href="https://cloud.generationentandem.ch/apps/calendar/p/oDRxfcYHiJiNqHS3" target="_blank">UND-Ferien (Nextcloud)</a><br/>';
-
-
 }
