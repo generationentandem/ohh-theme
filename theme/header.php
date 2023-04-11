@@ -49,12 +49,31 @@
                     ] );
                     ?>
                 </div>
+                <div class="navigation-control" onclick="document.body.classList.toggle('nav-opened')"
+                     role="button">
+                    <!-- new version triggers modal version
+                     <div class="navigation-control" data-toggle="navModal" role="button"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 22">
+                        <ellipse cx="8" cy="11" class="s" rx="6.4" ry="6.4"/>
+                        <path d="M14 15l4 3" class="s"/>
+                        <path d="M18 5h16" class="l t"/>
+                        <path d="M20 11h14" class="l m"/>
+                        <path d="M22 17h12" class="l b"/>
+                    </svg>
+                </div>
 
 
 
-	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-	<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
 
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
