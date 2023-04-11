@@ -1,8 +1,64 @@
+.button {
+    font-family: $header-font-family;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 .sites-button {
-  background: $primary-color;
-  font-size: 1.25rem;
-  font-weight: bold;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
-  border: none;
+    background: $primary-color;
+    font-size: 1.25rem;
+    font-weight: bold;
+    box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+    border-radius: 3px;
+    border: none;
+}
+
+.button-inline {
+    margin-bottom:0;
+    display: flex;
+    align-items: center;
+}
+
+.input-group {
+    flex-wrap: wrap;
+}
+
+.button-festival a {
+    background-color: #ff7c1a !important;
+    color: #fff !important;
+    text-shadow:none !important;
+}
+
+.button-yellow a {
+    background-color: #ffad29 !important;
+    color: #000000 !important;
+    text-shadow:none !important;
+}
+
+.button-donation {
+    background-color: #A20303 !important;
+    background-image: linear-gradient(#A20303, #A20303) !important;
+    color: #E6E6E6;
+    font-family: $header-font-family;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.button-group {
+    flex-grow: 0 !important;
+}
+
+.button-click {
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.event-info-text-underline {
+    text-decoration: underline #ffad29;
+    text-decoration-thickness: 2px;
 }
