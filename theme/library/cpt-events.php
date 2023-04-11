@@ -45,6 +45,7 @@ function und_create_event_postype() {
     register_post_type( 'und_eventpost', $args );
 }
 
+
 function und_create_eventcategory_taxonomy() {
     $labels = array(
         'name'                       => _x( 'Kategorien', 'taxonomy general name' ),
@@ -78,7 +79,6 @@ function und_create_eventcategory_taxonomy() {
 add_action( 'init', 'und_create_eventcategory_taxonomy', 0 );
 
 add_filter( 'rewrite_rules_array', 'mmp_rewrite_rules', 8 );
-
 function mmp_rewrite_rules( $rules ) {
     $newRules                          = array();
     $newRules['^.*/(.*?)/events/?$']   = 'index.php?taxonomy=und_eventcat&term=$matches[1]';
@@ -117,6 +117,7 @@ function wpa_show_permalinks( $post_link, $post ) {
 }
 
 add_filter( 'post_type_link', 'wpa_show_permalinks', 1, 2 );
+
 add_filter( 'term_link', 'term_link_filter', 10, 3 );
 function term_link_filter( $url, $term, $taxonomy ) {
 
@@ -125,7 +126,6 @@ function term_link_filter( $url, $term, $taxonomy ) {
     } else {
         return $url;
     }
-
 }
 
 // 3. Show Columns
