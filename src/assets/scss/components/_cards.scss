@@ -1,21 +1,129 @@
 .cards-container {
+    @include xy-grid;
 
-  @include xy-grid;
+    .card {
+        font-size: 85%;
+        p {
+            font-size: 1rem;
+        }
 
-  .card {
-    @include breakpoint(small) {
-      @include xy-cell(12);
+        @include breakpoint(small) {
+            @include xy-cell(12, $gutter-position: top left right bottom);
 
-      .card-content {
-        padding: 1rem;
-      }
+            .card-content {
+                padding: 1rem;
+            }
+            .card-image img {
+                width: 100%;
+            }
+        }
 
+        @include breakpoint(medium) {
+            @include xy-cell(1 of 2, true, 0.7rem,$gutter-position: top left right bottom);
+        }
+
+        @include breakpoint(large) {
+            @include xy-cell(1 of 3, true, 0.7rem,$gutter-position: top left right bottom);
+        }
     }
 
-    @include breakpoint(medium) {
-      @include xy-cell(1 of 3, true, 0.7rem );
-
+    &.nogrow .card {
+        @include breakpoint(normal) {
+            @include xy-cell-base(shrink);
+        }
     }
 
-  }
+    .featured-card {
+        @include breakpoint(medium){
+            margin-top: rem-calc(10px);
+        }
+        @include breakpoint(small only){
+            margin-left: calc(50% - 50vw) ;
+            margin-right: calc(50% - 50vw);
+            margin-top: 0;
+            width: auto;
+            max-width: 100vw;
+        }
+        @include xy-cell(12);
+        @include xy-grid(vertical, false);
+        @include breakpoint(normal){
+            @include xy-grid(horizontal, false);
+        }
+        .card-image {
+            @include breakpoint(normal){
+                @include xy-cell-base(auto);
+                flex: 0 1 auto;
+                @include xy-cell(3 of 5, $gutters: 0);
+            }
+            img {
+                height: 100%;
+            }
+        }
+        .card-section {
+            @include breakpoint(normal) {
+                @include xy-cell-base(auto);
+            }
+        }
+    }
+}
+
+.card-meta {
+    font-family: $header-font-family;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    time {
+        flex: none;
+        margin-right: auto;
+    }
+}
+
+.card-section {
+    @include xy-grid(vertical, false);
+    .author-part {
+        margin-top: auto;
+    }
+}
+
+.card-title {
+    color: #333;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.und_print_card {
+    margin: 10px 20px 20px;
+    background: none;
+    text-align: center;
+    img {
+        box-shadow: 0 5px 10px #0002, 0 1px 3px #0002, 0 5px 40px #0004;
+        transition: transform 0.125s ease-out;
+    }
+    img:hover {
+        transform: scale(1.05);
+    }
+}
+
+.und_print_card-title {
+    color: #000;
+    margin-top: 1rem;
+}
+
+.und_print_year {
+    margin-top: 1rem;
+    time {
+        border-bottom: 3px solid rgba(0, 0, 0, 0.11)!important;
+    }
+    time {
+        font-family: $header-font-family;
+        font-feature-settings: 'lnum';
+    }
+}
+
+.author-card .card-content {
+    width: 100%;
 }
