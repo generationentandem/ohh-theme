@@ -138,3 +138,56 @@ function excerpt($limit) {
     $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
     return $excerpt;
 }
+
+function wporg_sort_info_dashboard_widgets() {
+
+    // Globalize the metaboxes array, this holds all the widgets for wp-admin.
+    global $wp_meta_boxes;
+
+    // Get the regular dashboard widgets array
+    // (which already has our new widget but appended at the end).
+    $default_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+
+    // Backup and delete our new dashboard widget from the end of the array.
+    $example_widget_backup = array( 'und_custom_dashboard-Alle Infos und Unterlagen' => $default_dashboard['und_custom_dashboard-Alle Infos und Unterlagen'] );
+    unset( $default_dashboard['und_custom_dashboard-Alle Infos und Unterlagen'] );
+
+    // Merge the two arrays together so our widget is at the beginning.
+    $sorted_dashboard = array_merge( $example_widget_backup, $default_dashboard );
+
+    // Save the sorted array back into the original metaboxes.
+    $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+}
+add_action( 'wp_dashboard_setup', 'wporg_sort_info_dashboard_widgets' );
+
+function wporg_sort_calendar_dashboard_widgets() {
+
+    // Globalize the metaboxes array, this holds all the widgets for wp-admin.
+    global $wp_meta_boxes;
+
+    // Get the regular dashboard widgets array
+    // (which already has our new widget but appended at the end).
+    $default_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+
+    // Backup and delete our new dashboard widget from the end of the array.
+    $example_widget_backup = array( 'und_custom_dashboard-calendar' => $default_dashboard['und_custom_dashboard-calendar'] );
+    unset( $default_dashboard['und_custom_dashboard-calendar'] );
+
+    // Merge the two arrays together so our widget is at the beginning.
+    $sorted_dashboard = array_merge( $example_widget_backup, $default_dashboard );
+
+    // Save the sorted array back into the original metaboxes.
+    $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+}
+add_action( 'wp_dashboard_setup', 'wporg_sort_calendar_dashboard_widgets' );
+
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyDpeWOxbFnIUYvLJtN2HM_7YnpCEVhTKuE');
+}
+
+add_action('acf/init', 'my_acf_init');
+
+add_action( 'admin_enqueue_scripts', 'load_custom_script' );
+function load_custom_script() {
+    wp_enqueue_script('custom_js_script', get_bloginfo('template_url').'/public/js/custom-script.js', array('jquery'));
+}
