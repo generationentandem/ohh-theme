@@ -4,5 +4,10 @@
 
 [data-whatinput="mouse"] a:focus, button:focus
 [data-whatinput="touch"] a:focus, button:focus {
-  outline: none;
+    outline: none;
+}
+
+a {
+    text-decoration-color: #ddd;
+    text-decoration-line: underline;
 }
