@@ -5,56 +5,85 @@ Frontend styles for gutenberg blocks
 /** === Base Color Palatte === */
 @each $color, $code in $foundation-palette {
 
-  .has-#{$color}-background-color {
-      background-color: $code;
-  }
+    .has-#{$color}-background-color {
+        background-color: $code;
+    }
 
-  .has-#{$color}-color {
-      color: $code;
-  }
+    .has-#{$color}-color {
+        color: $code;
+    }
 }
 
 /** === Button === */
 .wp-block-button {
 
-	// add general foundation button styling
-	.wp-block-button__link {
-		@extend .button;
-    @each $color, $code in $foundation-palette {
+    // add general foundation button styling
+    .wp-block-button__link {
+        @extend .button;
+        @each $color, $code in $foundation-palette {
 
-      &.has-#{$color}-background-color {
-          background-color: $code;
-      }
+            &.has-#{$color}-background-color {
+                background-color: $code;
+            }
 
-      &.has-#{$color}-color {
-          color: $code;
-      }
+            &.has-#{$color}-color {
+                color: $code;
+            }
+        }
     }
-	}
 
-	// add special styling for squared buttons
-	&.is-style-squared .wp-block-button__link {
-		border-radius: 0;
-	}
-
-	// add outline styles
-	&.is-style-outline .wp-block-button__link{
-		@extend .hollow;
-	}
-
-	// set transparent background to block for outline button
-	&.is-style-outline,
-	&.is-style-outline:hover,
-	&.is-style-outline:focus,
-	&.is-style-outline:active {
-    // background: transparent;
-    .wp-block-button__link{
-      // background: transparent;
+    // add special styling for squared buttons
+    &.is-style-squared .wp-block-button__link {
+        border-radius: 0;
     }
-	}
+
+    // add outline styles
+    &.is-style-outline .wp-block-button__link{
+        @extend .hollow;
+    }
+
+    // set transparent background to block for outline button
+    &.is-style-outline,
+    &.is-style-outline:hover,
+    &.is-style-outline:focus,
+    &.is-style-outline:active {
+        // background: transparent;
+        .wp-block-button__link{
+            // background: transparent;
+        }
+    }
 }
 
 /** === File === */
 .wp-block-file .wp-block-file__button{
-  @include button();
+    @include button();
+}
+
+@media only screen and (min-width: 768px) {
+
+    .alignfull {
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw)!important;
+        width: auto!important;
+        max-width: 1000%!important;
+    }
+
+    .alignwide {
+        margin-left: calc(25% - 25vw)!important;
+        margin-right: calc(25% - 25vw)!important;
+        width: auto!important;
+        max-width: 1000%!important;
+    }
+
+    .alignwide img,
+    .alignfull img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.wp-block-cover, .wp-block-cover-image {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
