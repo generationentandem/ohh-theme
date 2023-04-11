@@ -22,17 +22,32 @@
         <div class="menu-main">
             <div class="wrapper">
                 <div class="menu-main-wrapper">
-                    <div class="site-title">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                           title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-                            <img style="height: 50px" src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/01/17145409/Logo-weiss-UND-Generationentandem.png" alt="UND Generationentandem">
-                            <?php /*<svg id="logo-und" xmlns="http://www.w3.org/2000/svg" viewBox="20 5 100 60">
+                    <div class="deleted-menu-main-branding" role="heading">
+                        <div class="site-title">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                               title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
+                                <img style="height: 50px" src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/01/17145409/Logo-weiss-UND-Generationentandem.png" alt="UND Generationentandem">
+                                <?php /*<svg id="logo-und" xmlns="http://www.w3.org/2000/svg" viewBox="20 5 100 60">
 									<title>«und»</title>
 									<path d="M25.5 19v23.4S25.5 54 40 54s14.4-11.6 14.4-11.6V31s.5-12 14.3-12 13.7 12 13.7 12v23h17c9 0 15-6.6 15-17.4 0-11-6-17.5-15-17.5h-14m-31 0v35"/>
 								</svg> */?>
                             <h1><span class="show-for-sr">UND</span> Generationentandem</h1>
                         </a>
                     </div>
+                </div>
+                <div class="menu-main-container" role="navigation">
+                    <?php
+                    global $wp_query;
+                    $wp_query->used_categories = array();
+                    $wp_query->used_tags       = array();
+                    $wp_query->und_nav_walker  = new Und_Walker_Nav_Menu();
+                    $menugen                   = wp_nav_menu( [
+                        "theme_location" => "main-menu",
+                        "depth"          => 5,
+                        "walker"         => $wp_query->und_nav_walker,
+                        "container"      => false
+                    ] );
+                    ?>
                 </div>
 
 
