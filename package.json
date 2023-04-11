@@ -1,0 +1,62 @@
+{
+    "name": "ohh-theme",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Wordpress Theme für UND Generationentandem",
+    "scripts": {
+        "standard": "standard src/assets/js/**/**/*.js",
+        "standard:fix": "standard src/assets/js/**/**/*.js --fix",
+        "stylelint": "stylelint src/assets/scss/**/**/*.scss",
+        "stylelint:fix": "stylelint src/assets/scss/**/**/*.scss --fix",
+        "bundle": "dir-archiver --src theme/ --dest ../und-theme.zip --exclude .DS_Store",
+        "vite": "vite build"
+    },
+    "keywords": [
+        "wordpress",
+        "theme",
+        "sass",
+        "foundation-sites"
+    ],
+    "homepage": "https://www.generationentandem.ch",
+    "license": "MIT",
+    "browserslist": [
+        "defaults",
+        "not IE 11",
+        "not dead",
+        "not op_mini all"
+    ],
+    "stylelint": {
+        "extends": "stylelint-config-recommended",
+        "ignoreFiles": [
+            "./theme/public/css/**/**/*.css",
+            "./vendor/**/**/*.css",
+            "./node_modules/**/**/*.css"
+        ],
+        "rules": {
+            "block-no-empty": null,
+            "no-empty-source": null,
+            "indentation": 2,
+            "at-rule-no-unknown": null
+        }
+    },
+    "devDependencies": {
+        "add-to-calendar-button": "^2.2.4",
+        "autoprefixer": "^10.4.14",
+        "browser-sync": "^2.26.3",
+        "dir-archiver": "^2.1.0",
+        "foundation-sites": "^6.7.5",
+        "glob-all": "^3.3.1",
+        "jquery": "^3.6.4",
+        "laravel-vite-plugin": "^0.7.4",
+        "motion-ui": "^2.0.4",
+        "postcss": "^8.4.21",
+        "sass": "^1.35.2",
+        "standard": "^17.0.0",
+        "stylelint": "^15.3.0",
+        "stylelint-config-recommended-scss": "^9.0.1",
+        "stylelint-scss": "^4.5.0",
+        "vite": "^4.2.0",
+        "vite-plugin-static-copy": "^0.13.1",
+        "what-input": "^5.2.12"
+    }
+}

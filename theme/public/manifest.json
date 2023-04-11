@@ -1,0 +1,25 @@
+{
+  "src/assets/images/demo/hero-bg-foundation-6-large.svg": {
+    "file": "assets/hero-bg-foundation-6-large-94fe5dee.svg",
+    "src": "src/assets/images/demo/hero-bg-foundation-6-large.svg"
+  },
+  "src/assets/images/demo/hero-bg-foundation-6-small.svg": {
+    "file": "assets/hero-bg-foundation-6-small-d467cb95.svg",
+    "src": "src/assets/images/demo/hero-bg-foundation-6-small.svg"
+  },
+  "src/assets/js/app.js": {
+    "file": "assets/app-7215a408.js",
+    "isEntry": true,
+    "src": "src/assets/js/app.js"
+  },
+  "src/assets/scss/app.scss": {
+    "file": "assets/app-b00d27bc.css",
+    "isEntry": true,
+    "src": "src/assets/scss/app.scss"
+  },
+  "src/assets/scss/editor.scss": {
+    "file": "assets/editor-8df789f2.css",
+    "isEntry": true,
+    "src": "src/assets/scss/editor.scss"
+  }
+}
