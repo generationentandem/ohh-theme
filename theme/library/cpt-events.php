@@ -84,20 +84,13 @@ function mmp_rewrite_rules( $rules ) {
     $newRules['^.*/(.*?)/events/?$']   = 'index.php?taxonomy=und_eventcat&term=$matches[1]';
     $newRules['^(.*)/events/?$']       = 'index.php?taxonomy=und_eventcat&term=$matches[1]';
     $newRules['^(.*)/events/(.*?)/?$'] = 'index.php?post_type=und_eventpost&name=$matches[2]';
-    //$newRules['^(?!.*/event/.*)(?:generationenfestival|live)/((?:.+/)*(.+?))/?$'] = 'index.php?taxonomy=und_eventcat&term=$matches[2]'; // my custom structure will always have the post name as the 5th uri segment
-    //$newRules['^(?!.*/event/.*)generationenfestival/((?:.+/)*(.+?))/?$'] = 'index.php?taxonomy=und_eventcat&term=$matches[2]'; // my custom structure will always have the post name as the 5th uri segment
-    //$newRules['^(?!.*/event/.*)generationenfestival/(?:.*/)*(?:(.*?)/)/?$'] = 'index.php?taxonomy=und_eventcat&term=$matches[1]'; // my custom structure will always have the post name as the 5th uri segment
-    //$newRules['generationenfestival/2019/(.+)/?$'] = 'index.php?event_cat=$matches[1]'; // my custom structure will always have the post name as the 5th uri segment
-    //$newRules['((?:.+/?)+?)/(.+)/?$'] = 'index.php?term=$matches[1]&name=$matches[2]'; // my custom structure will always have the post name as the 5th uri segment
-    //$newRules['(?:.+/)+?(.+)/(.+)/?$'] = 'index.php?post_type=und_eventpost&und_event=$matches[2]&event_cat=$matches[1]'; // my custom structure will always have the post name as the 5th uri segment
 
     return array_merge( $newRules, $rules );
 }
 
 function wpa_show_permalinks( $post_link, $post ) {
     if ( is_object( $post ) && $post->post_type == 'und_eventpost' ) {
-        $term_id = yoast_get_primary_term_id( 'und_eventcat', $post->ID );
-        $terms   = $term_id ? [ get_term( $term_id ) ] : wp_get_object_terms( $post->ID, 'und_eventcat' );
+        $terms = wp_get_object_terms( $post->ID, 'und_eventcat' );
         if ( $terms ) {
             $term = $terms[0];
             $slug = '';
@@ -218,7 +211,6 @@ function und_get_events( $args, $festival = true) {
             array(
                 'taxonomy'         => 'und_eventcat',
                 'field'            => 'id',
-                'terms'            => get_term_by( 'slug', 'programm-2019', 'und_eventcat' )->term_id,
                 'include_children' => true
             ),
             'orderby' => 'date',
