@@ -395,10 +395,10 @@ function und_get_parent_template( $term, $taxonomy, $post, $t ) {
 add_filter( 'single_template', 'und_check_for_category_single_template' );
 function und_check_for_category_single_template( $t ) {
     global $post;
-    if ( yoast_get_primary_term_id() || has_term( '', 'und_eventcat' ) ) {
+    if ( has_term( '', 'und_eventcat' ) ) {
         $taxonomy = $post->post_type == 'und_eventpost' ? 'und_eventcat' : 'category';
 
-        return und_get_parent_template( get_term( yoast_get_primary_term_id( $taxonomy ), $taxonomy ), $taxonomy, $post, $t );
+        //return und_get_parent_template( get_term( 1, $taxonomy ), $taxonomy, $post, $t );
     } elseif ( has_category() ) {
         $slug = get_the_category()[0]->slug;
         if ( file_exists( TEMPLATEPATH . "/single-category-{$slug}.php" ) ) {
@@ -450,25 +450,6 @@ function get_contrast_color( $rgb ) {
 add_filter( 'cancel_comment_reply_link', 'und_cancel_comment_reply_link' );
 function und_cancel_comment_reply_link( $formatted_link ) {
     return str_replace( 'rel="nofollow"', 'rel="nofollow" class="button secondary"', $formatted_link );
-}
-
-function und_get_category_line( $color = null ) {
-    return;
-    //if ( $color == null ) {
-    //if ( ( is_single() && ! is_attachment() || ! is_category( 'online' ) ) ) {
-    //global $wp_query;
-    //if ( has_term( '', 'und_eventcat' ) ) {
-    //$id = yoast_get_primary_term_id( 'und_eventcat' );
-    //} else {
-    //$id = yoast_get_primary_term_id();
-    //}
-    //if ( $bordercolor = get_taxonomy_color( $id ) ) {
-    //echo "<hr class='category_line' style='border-bottom: 10px solid {$bordercolor}'>";
-    //}
-    //}
-    //} else {
-    //echo "<hr class='category_line' style='border-bottom: 10px solid {$color}'>";
-    //}
 }
 
 function und_the_tags( $before = '', $after = '' ) {
