@@ -90,7 +90,7 @@ ul.menu {
 }
 
 .menu-main {
-    $bg-color: #191919;
+    $bg-color: #A20303;
     @include breakpoint(medium) {
         order: 1;
     }
@@ -182,14 +182,6 @@ ul.menu {
     }
 }
 
-//@include breakpoint(medium only) {
-//	.menu-main-branding {
-//		flex-basis:100%!important;
-//		order:-1!important;
-//		margin-bottom:10px!important;
-//	}
-//}
-
 .menu-main-branding {
     @include breakpoint(normal) {
         order: 1;
@@ -228,7 +220,6 @@ ul.menu {
 
     form {
         flex-grow: 1;
-        border: 3px solid #252525;
         @include breakpoint(medium) {
             max-width: 250px;
         }
@@ -1020,5 +1011,30 @@ $nav_color_online: #2f528f;
             justify-content: center;
             list-style: none;
         }
+    }
+}
+
+ul.nav-social-icon {
+    display: flex;
+    margin: 0;
+}
+
+.nav-social-icon a {
+    font-size: 16px !important;
+    padding: 6px 10px;
+}
+
+.menu-meta {
+    background-color: #710202;
+}
+
+@media print, screen and (min-width: 37.5em) {
+    .menu-main .menu-item,
+    .menu-main .menu-item.active a {
+        border-radius: 4px 4px 0px 0px;
+    }
+
+    .menu-main .menu-item {
+        margin-left: 4px;
     }
 }
