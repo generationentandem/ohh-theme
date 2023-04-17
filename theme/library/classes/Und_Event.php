@@ -58,12 +58,7 @@ class Und_Event
 				$this->instances[] = new Und_Event_Instance($this, $instance);
 			}
 
-			$yoast_get_primary_term_id = yoast_get_primary_term_id('und_eventcat', $post);
-			if ($yoast_get_primary_term_id) {
-				$this->category = get_term($yoast_get_primary_term_id, 'und_eventcat');
-			} else {
-				$this->category = get_the_terms($post, 'und_eventcat')[0];
-			}
+            $this->category = get_the_terms($post, 'und_eventcat')[0];
 
 			$this->location = $acf_fields->und_event_place;
 			$this->setLocationClass($acf_fields->und_event_place);
