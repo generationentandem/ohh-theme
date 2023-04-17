@@ -2,7 +2,6 @@
 /vendor
 npm-debug.log
 style.css.map
-.DS_Store
 /und-theme.zip
 *.ics
 theme/dist
