@@ -5,9 +5,9 @@ require_once('classes/Und_Event_Instance.php');
 
 // 1. Custom Post Type Registration (Events)
 
-add_action( 'init', 'und_create_event_postype' );
+add_action( 'init', 'ohh_create_event_postype' );
 
-function und_create_event_postype() {
+function ohh_create_event_postype() {
     $labels = array(
         'name'               => _x( 'Events', 'post type general name' ),
         'singular_name'      => _x( 'Event', 'post type singular name' ),
@@ -203,20 +203,15 @@ function und_events_custom_columns( $column, $post_id ) {
  *
  * @return Und_Event[]
  */
-function und_get_events( $args, $festival = true) {
-    $std_args = array(
+function ohh_get_events( $args, $festival = true) {
+    $std_args = [
         'post_type'   => 'und_eventpost',
         'numberposts' => - 1,
-        'tax_query'   => array(
-            array(
-                'taxonomy'         => 'und_eventcat',
-                'field'            => 'id',
-                'include_children' => true
-            ),
+        'tax_query'   => [
             'orderby' => 'date',
             'order'   => 'DESC',
-        )
-    );
+        ]
+    ];
 
     $posts = get_posts( wp_parse_args( $args, $std_args ) );
 
