@@ -25,6 +25,10 @@ foreach($events as $event) {
     }
 }
 
+// Alle News von generationentandem.ch abfragen
+$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/posts?categories=18859&_embed', $args);
+$news = json_decode($response['body'], true);
+
 /** Events sortieren **/
 function bubblesort($array, $length, $order){
     for ($i = ($length - 1); $i >= 0; $i--)
@@ -80,49 +84,15 @@ function bubblesort($array, $length, $order){
 </main>
 
 <div class="wrapper">
-    <section class="tile-container" role="main">
+    <section class="cards-container nogrow" role="main">
         <h2 class="title-tile f19_heading" style="border-bottom: 6px solid #0a0a0a;">Aktuell</h2>
         <?php
-            /*if (have_posts()) :
-                $used_posts = [];
-
-                function convert_post_list( $posts ) {
-                    $array = [];
-                    foreach ( $posts as $post ) {
-                        $array[ '' . $post->ID ] = $post;
-                    }
-
-                    return $array;
-                }
-*/
-                /**
-                 * @param $used_posts array
-                 * @param $requested WP_Post|null
-                 *
-                 * @return WP_Post
-                 */
-                /*function get_frontpage_post( $used_posts, $requested = null ) {
-                    if ( $requested == null ) {
-                        return get_posts( array( 'exclude' => $used_posts, 'posts_per_page' => 1, 'category__not_in' => array( 42 ) ) )[0];
-                    } else {
-                        return get_post( $requested );
-                    }
-                }
-
-                function get_slideshow_posts($used_posts, $frontpage_featured) {
-                    if ($frontpage_featured['typ'] == "custom" && $frontpage_featured['specific_post']) {
-                        return $frontpage_featured['specific_post'];
-                    } else {
-                        return get_posts( array( 'exclude' => $used_posts, 'posts_per_page' => 3, 'category__not_in' => array( 42 ) ) );
-                    }
-                }
-
-                $frontpage_featured = get_field( 'frontpage_featured', (int) get_option( 'page_on_front' ) );
-                $sliderPostArray = get_slideshow_posts($used_posts, $frontpage_featured);*/
-
-            //endif;
+            foreach($news as $post) {
+                setup_postdata( $GLOBALS['post'] =& $post );
+                get_template_part( 'template-parts/block/und-card', 'post' );
+                wp_reset_postdata();
+            }
         ?>
-
     </section>
 </div>
 
