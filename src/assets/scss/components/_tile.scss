@@ -1,0 +1,100 @@
+.tile-container {
+  @include xy-grid;
+}
+
+.title-tile {
+  @include xy-cell(4 of 4, $gutter-position: top left right bottom);
+  @include xy-gutters();
+}
+
+.tile {
+  @include xy-cell(1 of 1, $gutter-position: top left right bottom);
+  @include breakpoint(450px up){
+    @include xy-cell(1 of 2);
+  }
+  @include breakpoint(medium){
+    @include xy-cell(1 of 2);
+  }
+  @include breakpoint(normal){
+    @include xy-cell(1 of 3);
+  }
+  @include breakpoint(large){
+    @include xy-cell(1 of 4);
+  }
+  @include xy-gutters($gutter-position: top left right bottom);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  position: relative;
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 100%; 	/* initial ratio of 1:1*/
+  }
+}
+
+.tile:hover .tile-inner {
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.2s transform ease-out,0.6s background-color cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.tile-inner {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s transform ease, 0.15s background-color ease-in;
+    width: 100%;
+    text-decoration: none;
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.tile-title {
+    font-size: 32px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8),0 0 4px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    text-align: center;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.tile-info {
+    position: absolute;
+    padding: 3px 5px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.6);
+
+    @include breakpoint(medium down) {
+        font-size: 1rem;
+    }
+}
+
+.tile-location {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+
+    @include breakpoint(large) {
+        padding: 2px 0 2px 4px;
+        width: calc(100% - 4px);
+    }
+}
+
+.tile-time {
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    @include breakpoint(large) {
+        padding: 2px 0 2px 4px;
+        width: calc(100% - 4px);
+    }
+}
