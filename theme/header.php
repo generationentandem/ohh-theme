@@ -77,10 +77,7 @@
                     <?php wp_nav_menu( array( 'theme_location' => 'meta-menu-right', "walker" => $wp_query->und_nav_walker ) ); ?>
                     <ul class="nav-social-icon">
                         <li><a href="https://www.facebook.com/generationentandem/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/undTandem" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="https://www.instagram.com/generationentandem/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://soundcloud.com/generationentandem" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCyJ52xscqRdb7z3GsVub_Ew" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                         <li><a href="https://www.generationentandem.ch/about/netzwerk/newsletter/"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
