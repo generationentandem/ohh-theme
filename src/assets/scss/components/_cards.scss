@@ -13,6 +13,7 @@
             .card-content {
                 padding: 1rem;
             }
+
             .card-image img {
                 width: 100%;
             }
@@ -126,4 +127,8 @@
 
 .author-card .card-content {
     width: 100%;
+}
+
+.card-image img {
+    object-fit: cover;
 }
