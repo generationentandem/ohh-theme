@@ -8,7 +8,7 @@ define( 'TWOHOURS', 7200 );
 
 get_header();
 
-
+// Alle Events von generationentandem.ch abfragen
 $args = [
     'headers' => [
         'method' => 'GET',
