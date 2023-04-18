@@ -17,7 +17,6 @@ register_nav_menus(
     )
 );
 
-
 /**
  * Desktop navigation - right top bar
  *
@@ -379,12 +378,10 @@ class Und_Walker_Nav_Menu extends Walker_Nav_Menu {
         } elseif ( is_single() && ! is_attachment() ) {
             if ( has_category() ) {
                 $this->hierarchy_type = 'category';
-                $primary_category     = yoast_get_primary_term_id( 'category', get_post() );
-                $this->primary_term   = $primary_category ? get_category( $primary_category ) : get_the_category()[0];
+                $this->primary_term   = get_the_category()[0];
             } elseif ( has_term( '', 'und_eventcat' ) ) {
                 $this->hierarchy_type = 'und_eventcat';
-                $primary_term         = yoast_get_primary_term_id( 'und_eventcat', get_post() );
-                $this->primary_term   = $primary_term ? get_term( $primary_term ) : get_terms()[0];
+                $this->primary_term = get_terms()[0];
             }
         }
 
