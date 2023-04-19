@@ -71,9 +71,6 @@ function bubblesort($array, $length, $order){
 <main>
     <div class="singular-container">
         <article <?php post_class(); ?>>
-            <header class="entry-header">
-                <h1><?php the_title() ?></h1>
-            </header>
             <div class="entry-content">
                 <div class="post-wrapper">
                     <?php the_content(); ?>
@@ -114,4 +111,5 @@ function bubblesort($array, $length, $order){
 if(is_category()){
     $wp_query->used_categories[] = $wp_query->get_queried_object_id();
 }
-get_footer(); ?>
+get_footer();
+?>
