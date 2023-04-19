@@ -37,11 +37,18 @@
 
 .button-donation {
     background-color: #A20303 !important;
-    background-image: linear-gradient(#A20303, #A20303) !important;
     color: #E6E6E6;
     font-family: $header-font-family;
     font-weight: 600;
     text-decoration: none;
+}
+
+.button-donation:hover {
+    background-color: #710202 !important;
+    color: #E6E6E6;
+    font-family: $header-font-family;
+    font-weight: 600;
+    text-decoration: underline white !important;
 }
 
 .button-group {
