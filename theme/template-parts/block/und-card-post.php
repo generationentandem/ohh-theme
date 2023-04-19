@@ -16,8 +16,10 @@ $classes = 'card post-card ' . (($featured)?$featured:'');
 	</a>
 	<section class="card-section">
 		<div class="card-meta">
-			<time itemprop="datePublished" title="<?php echo date_i18n( "l, d. F Y | H:i:s", get_the_date( "U" ) ) ?>"
-					datetime="<?php echo get_the_date( DATE_W3C ) ?>"><?php echo relative_date( DateTime::createFromFormat( "U", get_the_date( 'U' ) ) ) ?></time>
+			<time itemprop="datePublished" title="<?php echo date_i18n("l, d. F Y | H:i:s", $post['date']) ?>"
+                datetime="<?php echo $post['date'] ?>">
+                <?php echo relative_date(DateTime::createFromFormat("Y-m-d\TH:i:s", $post['date'])) ?>
+            </time>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="card-link">
 			<?php
