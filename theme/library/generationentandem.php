@@ -185,7 +185,7 @@ function relative_date( $time, $emoji = true ) {
     } else if ( $dateDiff->days <= 1 && $dateDiff->invert == 1 ) {
         return $future . 'Morgen, um ' . strftime('%k:%M', $time->getTimestamp());
     } else if ( $dateDiff->days <= 1 && $dateDiff->invert == 0 ) {
-        return 'Gestern, um ' . strftime('%k:%M', $time->getTimestamp());
+        return 'Gestern, um ' . date('H:i', $time->getTimestamp());
     }
 
     // dateTime is in the next or past 7 days
