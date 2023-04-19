@@ -103,6 +103,12 @@ function bubblesort($array, $length, $order){
                 get_template_part('template-parts/block/und-tile-und_eventpost');
                 wp_reset_postdata();
             }
+
+            if (empty($future_instances)) {
+                echo "<div class='text-center cell'>";
+                    echo "<h4>Aktuell sind keine Aktivitäten im Höchhus geplant.</h4>";
+                echo "</div>";
+            }
         ?>
     </section>
 </div>
