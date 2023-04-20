@@ -11,7 +11,7 @@ $featured = get_query_var('additional_classes',false);
 $classes = 'card post-card ' . (($featured)?$featured:'');
 ?>
 <article id='post-<?php echo $post['id'] ?>' <?php post_class( $classes ) ?> itemscope itemtype="https://schema.org/Article">
-	<a href="<?php the_permalink(); ?>" class="card-image">
+	<a href="/aktuelle-news/?post=<?php echo $post['id'] ?>" class="card-image">
         <img style="height: 12em" src="<?php echo $post['_embedded']['wp:featuredmedia'][0]['source_url'] ?>" />
 	</a>
 	<section class="card-section">
@@ -21,7 +21,7 @@ $classes = 'card post-card ' . (($featured)?$featured:'');
                 <?php echo relative_date(DateTime::createFromFormat("Y-m-d\TH:i:s", $post['date'])) ?>
             </time>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="card-link">
+		<a href="/aktuelle-news?post=<?php echo $post['id'] ?>" class="card-link">
 			<?php
 			$title = $post['title']['rendered'];
             $has_thumbnail = $post['_embedded']['wp:featuredmedia'][0]['source_url'] == false;
