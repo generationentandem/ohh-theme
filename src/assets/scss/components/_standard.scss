@@ -1,0 +1,54 @@
+body {
+  hyphens: auto;
+  margin-bottom: 0;
+}
+
+blockquote {
+    font-size: 120%;
+}
+
+blockquote p {
+    line-height: 1.4 !important;
+}
+
+.lead {
+  font-weight: 600;
+  text-align: justify;
+  font-family: $header-font-family;
+}
+
+.subheader {
+  font-family: $body-font-family;
+  font-weight: 700;
+  font-style: italic;
+  color: #000;
+}
+
+.button {
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #0001;
+  line-height: 1;
+  transform: perspective(1px) scale(1.0);
+  transition: background-color,box-shadow,transform 0.15s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.1);
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    transform: perspective(1px) scale(1.05);
+    z-index: 10;
+  }
+}
+
+form .button {
+  margin-bottom: rem-calc(16px);
+}
+
+.flex_align_items_end {
+  display: flex;
+  align-items: flex-end;
+}
+
+a {
+  text-decoration-color: rgba(0, 0, 0, 0.12);
+}
