@@ -8,12 +8,13 @@ define( 'TWOHOURS', 7200 );
 
 get_header();
 
-// Alle Events von generationentandem.ch abfragen
 $args = [
     'headers' => [
         'method' => 'GET',
     ]
 ];
+
+// Alle Events von generationentandem.ch abfragen
 $response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18858&_embed', $args);
 $events = json_decode($response['body'], true);
 
