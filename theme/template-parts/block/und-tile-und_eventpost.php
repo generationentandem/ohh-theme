@@ -4,7 +4,7 @@ $instance = get_query_var('und_event_instance');
 ?>
 <article <?php post_class( 'tile image-tile ' . $instance['slug'] ) ?>
 	style="background-image: url('<?php echo $instance['_embedded']['wp:featuredmedia'][0]['source_url'] ?>')">
-	<a class="tile-inner" href="<?php the_permalink() ?>">
+	<a class="tile-inner" href="/aktueller-event/<?php $instance['id'] ?>">
 		<h3 class="tile-title"><?php echo $instance['title']['rendered'] ?></h3>
 		<?php
         echo '<h5 class="tile-location tile-info tile-cat-' . $instance['slug'] . '" style="background-color: #a20303; color: white">Offenes Höchhus</h5>';
