@@ -82,5 +82,7 @@ get_header();
 </main>
 
 <?php
+    wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/public/' . foundationpress_asset_path( 'slick.css' ), array(), false, 'all' );
+
     get_footer();
 ?>
