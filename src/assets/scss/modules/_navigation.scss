@@ -581,7 +581,7 @@ ul.menu {
 
 .menu-meta-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     flex-direction: column;
     @include breakpoint(medium) {
         flex-direction: row;
