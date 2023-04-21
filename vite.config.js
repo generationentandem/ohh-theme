@@ -15,10 +15,16 @@ export default defineConfig({
             refresh: true,
         }),
         viteStaticCopy({
-            targets: [{
+            targets: [
+                {
                 src: './src/assets/images/**',
                 dest: 'images/'
-            }]
+                },
+                {
+                    src: './src/assets/cool-timeline-pro/**',
+                    dest: 'assets/'
+                }
+            ]
         })
     ],
 });
