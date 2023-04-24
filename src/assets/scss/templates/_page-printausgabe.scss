@@ -1,0 +1,32 @@
+.page-printausgabe {
+  padding: 10px;
+  background: #fff;
+  .entry-content,.entry-header {
+    justify-content: flex-start;
+  }
+}
+
+
+
+.page-printausgabe-cover {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding-top: 20px;
+  @include breakpoint(900px){
+    float: right;
+    margin: 20px;
+
+    .page-printausgabe-cover-image {
+      box-shadow: 0 5px 10px #0002, 0 1px 3px #0002, 0 5px 40px #0004;
+    }
+  }
+}
+
+.page-printausgabe-cover-info {
+  font-weight: 400;
+}
+
+.page-printausgabe-pdfviewer {
+  width: 100%;
+}
