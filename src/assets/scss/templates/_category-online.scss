@@ -1,0 +1,26 @@
+.category-overview {
+  padding-top: 20px;
+}
+
+.category-overview-header {
+  @include xy-cell(12);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.category-overview-heading {
+  display: flex;
+  flex-flow: column wrap;
+
+}
+
+.category-overview-description {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.category-overview-title {
+  margin-bottom: 0;
+}
