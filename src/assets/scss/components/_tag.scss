@@ -1,0 +1,14 @@
+.round-tags-container {
+  @include xy-grid();
+}
+
+.round-tag {
+  padding: 10px;
+  font-size: 90%;
+  font-family: $header-font-family;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 50px;
+  @include xy-cell(shrink, $gutter-position: right left bottom top);
+}
