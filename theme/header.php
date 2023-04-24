@@ -37,12 +37,12 @@
                         $wp_query->used_categories = array();
                         $wp_query->used_tags       = array();
                         $wp_query->und_nav_walker  = new Und_Walker_Nav_Menu();
-                        $menugen                   = wp_nav_menu( [
+                        $menugen                   = wp_nav_menu([
                             "theme_location" => "main-menu",
                             "depth"          => 5,
                             "walker"         => $wp_query->und_nav_walker,
                             "container"      => false
-                        ] );
+                        ]);
                         ?>
                     </div>
                     <div class="navigation-control" onclick="document.body.classList.toggle('nav-opened')"
