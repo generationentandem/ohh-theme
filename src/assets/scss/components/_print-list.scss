@@ -1,0 +1,49 @@
+.print-list {
+  padding: 20px 0;
+}
+
+.print-list-year {
+  @include xy-grid();
+  @include xy-gutters($negative: true);
+  font-size: 80%;
+}
+
+.print-list-year-title {
+  @include xy-cell(1 of 1);
+  @include breakpoint(normal){
+    @include xy-cell(1 of 1);
+  }
+  font-feature-settings: 'lnum';
+  font-family: $header-font-family;
+  border-bottom: 3px solid rgba(0,0,0,.11)!important;
+}
+
+.print-list-item {
+  @include xy-cell(1 of 1);
+  @include breakpoint(350px){
+    @include xy-cell(1 of 2);
+  }
+  @include breakpoint(normal){
+    @include xy-cell(1 of 4);
+  }
+  @include xy-gutters( $gutter-position: right left top bottom);
+}
+
+.print-list-item-cover {
+  box-shadow: 0 5px 10px #0002, 0 1px 3px #0002, 0 5px 40px #0004;
+  transition: transform 125ms ease-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.print-list-item-heading {
+  text-align: center;
+  line-height: 1;
+  color: #000;
+}
+
+.print-list-item-info {
+  font-weight: 400;
+  font-size: 18px;
+}
