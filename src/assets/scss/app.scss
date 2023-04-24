@@ -70,7 +70,6 @@
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editor-style";
-@import "components/tile";
 
 // Components
 @import "components/buttons";
@@ -78,8 +77,17 @@
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
+@import "components/image";
 @import "components/standard";
+@import "components/category";
+@import "components/tag";
+@import "components/liveticker";
+@import "components/tile";
 
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+@import "templates/page-default";
+@import "templates/category-online";
+@import "templates/page-printausgabe";
+@import "templates/eventpost";
