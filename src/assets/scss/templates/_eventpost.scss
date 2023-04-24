@@ -1,0 +1,37 @@
+.festival-2019-font {
+  font-family: poplar-std, $header-font-family;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.und_eventpost-categoryheading {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.entry-title.festival-2019-font {
+  margin-top: 0;
+}
+
+.und_eventpost-meta {
+  @include xy-grid();
+}
+
+.und_eventpost-metablock {
+  @include xy-cell(auto, $gutter-output:false);
+  @include xy-gutters($gutter-position: right left bottom);
+  flex-basis: auto;
+}
+
+.und_eventpost-meta_timetable,
+.und_eventpost-meta_place{
+    background-color: #dedede;
+    padding: 1vw;
+    border-radius: 2px;
+}
+
+.und_eventpost-meta_desc {
+  @include xy-cell(full, $gutter-output:false);
+}
