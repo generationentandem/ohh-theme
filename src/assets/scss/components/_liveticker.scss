@@ -1,0 +1,48 @@
+.liveticker-sort {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+input[name=oldest_first]:checked+.liveticker-list {
+  flex-direction: column;
+}
+
+.liveticker-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.liveticker-list-item {
+  box-shadow: 0 0 0.3125rem rgba(0,0,0,.2);
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 4px;
+  max-width: 700px;
+  width: 100%;
+  margin: 10px auto;
+  iframe {
+    width: 100%;
+  }
+  h3 {
+    margin-top: 10px;
+    text-align: left;
+  }
+}
+
+.liveticker-list-item-time {
+  background: rgba(0,0,0,.05);
+  color: rgba(0,0,0,.8);
+  font-family: $header-font-family;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 90%;
+}
+
+.liveticker-list-item-content {
+  padding: 0 20px 10px;
+}
