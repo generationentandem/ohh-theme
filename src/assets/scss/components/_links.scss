@@ -8,6 +8,13 @@
 }
 
 a {
+    color: #ddd;
     text-decoration-color: #ddd;
+    text-decoration-line: underline;
+}
+
+a:hover {
+    color: #8e8e8e;
+    text-decoration-color: #8e8e8e;
     text-decoration-line: underline;
 }
