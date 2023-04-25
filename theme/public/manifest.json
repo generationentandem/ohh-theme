@@ -13,12 +13,12 @@
     "src": "src/assets/js/app.js"
   },
   "src/assets/scss/app.scss": {
-    "file": "assets/app-30d2289b.css",
+    "file": "assets/app-7ea0cadb.css",
     "isEntry": true,
     "src": "src/assets/scss/app.scss"
   },
   "src/assets/scss/editor.scss": {
-    "file": "assets/editor-bbd824d3.css",
+    "file": "assets/editor-ea014d5b.css",
     "isEntry": true,
     "src": "src/assets/scss/editor.scss"
   }
