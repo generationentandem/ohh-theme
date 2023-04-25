@@ -76,8 +76,8 @@
                     <?php wp_nav_menu( array( 'theme_location' => 'meta-menu-left', "walker" => $wp_query->und_nav_walker ) ); ?>
                     <?php wp_nav_menu( array( 'theme_location' => 'meta-menu-right', "walker" => $wp_query->und_nav_walker ) ); ?>
                     <ul class="nav-social-icon">
-                        <li><a href="https://www.facebook.com/generationentandem/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/generationentandem/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100092028909648" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/offeneshoechhus/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://www.generationentandem.ch/about/netzwerk/newsletter/"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
