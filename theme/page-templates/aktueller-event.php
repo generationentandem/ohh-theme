@@ -78,7 +78,7 @@ get_header();
                             <?php echo $eventData['title']['rendered'] ?>
                         </h1>
                     </header>
-                    <?php echo $eventData['excerpt']['rendered'] ?>
+                    <?php echo str_replace('<p>', '<p class="lead">', $eventData['excerpt']['rendered']) ?>
 
                     <div class="und_eventpost-meta">
                         <div class="und_eventpost-metablock und_eventpost-meta_timetable" style="margin: 0">
