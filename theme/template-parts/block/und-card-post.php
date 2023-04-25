@@ -28,7 +28,7 @@ $classes = 'card post-card ' . (($featured)?$featured:'');
 			echo "<h2 itemprop='name' class='card-title h4 " . ( ! $has_thumbnail && strlen( $title ) < 30 && get_longest_word( $title ) < 14 ? "" : "small" ) . "'>${title}</h2>";
 			?>
 		</a>
-		<?php if ( ! $has_thumbnail && get_post()->post_type != 'page' && strlen( $title ) < 50 ) { ?>
+		<?php if ( ! $has_thumbnail && get_post()->post_type != 'page' && strlen( $title ) < 100 ) { ?>
 			<div class="card-excerpt" itemprop="description">
 				<?php
 				    echo $post['excerpt']['rendered'];
