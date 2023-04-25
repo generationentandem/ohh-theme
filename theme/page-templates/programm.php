@@ -68,7 +68,7 @@ function bubblesort($array, $length, $order){
             Nächster Event
         </p>
     </div>
-    <img class="img-object-center-60" src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/12104647/Bildschirm%C2%ADfoto-2023-04-12-um-10.41.01.png" />
+    <img src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/25154538/UND-Zukunft-1-scaled.jpeg" />
 </div>
 
 <div class="wrapper">
