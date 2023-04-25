@@ -78,7 +78,7 @@
                     <ul class="nav-social-icon">
                         <li><a href="https://www.facebook.com/profile.php?id=100092028909648" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://www.instagram.com/offeneshoechhus/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://www.generationentandem.ch/about/netzwerk/newsletter/"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="mailto:info@offeneshoechhus.ch"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
