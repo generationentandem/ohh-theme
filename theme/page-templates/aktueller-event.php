@@ -43,7 +43,7 @@ $args = [
 
 // Alle Events von generationentandem.ch abfragen
 $event = $_GET['event'];
-$response = wp_remote_request("https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost/$event", $args);
+$response = wp_remote_request("https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost/$event?_embed", $args);
 $eventData = json_decode($response['body'], true);
 
 get_header();
@@ -58,9 +58,9 @@ get_header();
                     border-color: #ff7c1a;
                 }
             </style>
-            <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+            <?php if(isset($eventData['_embedded']['wp:featuredmedia'][0]['source_url'])) : ?>
                 <div class="featured-hero eventpost-header" role="banner"
-                     data-interchange="[<?php the_post_thumbnail_url( 'und-small' ); ?>, small], [<?php the_post_thumbnail_url( 'und-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'und-large' ); ?>, large], [<?php the_post_thumbnail_url( 'und-xlarge' ); ?>, xlarge]">
+                     style="background-image: url('<?php echo $eventData['_embedded']['wp:featuredmedia'][0]['source_url'] ?>')">
                 </div>
                 <?php
                 wp_add_inline_script( 'foundation', 'new Foundation.Interchange($(".featured-hero"))', 'after' );
