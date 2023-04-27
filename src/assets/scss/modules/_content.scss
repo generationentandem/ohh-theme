@@ -195,10 +195,20 @@ article.post {
 .header-img-overlay p {
     font-size: 3em;
     line-height: 1;
+
+    @include breakpoint(medium down) {
+        font-size: 2em;
+    }
 }
 
-.header-img-overlay button {
+.header-img-overlay .button {
     color: white;
+    width: 30%;
+    font-size: 2em;
+
+    @include breakpoint(medium down) {
+        width: 100%;
+    }
 }
 
 .has-background {
@@ -208,5 +218,12 @@ article.post {
 
     a:hover {
         color: #8f8f8f  ;
+    }
+}
+
+@include breakpoint(large) {
+    .linebreak:before {
+        content:"\a";
+        white-space: pre;
     }
 }
