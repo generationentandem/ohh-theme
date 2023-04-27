@@ -62,9 +62,9 @@ function bubblesort($array, $length, $order){
 <div class="header-img">
     <div class="header-img-overlay">
         <p>
-            Der neue offene Ort der Begegnung in der Region Thun
+            Der neue offene Ort der Begegnung <i class="linebreak"></i>in der Region Thun
         </p>
-        <a style="width: 30%; font-size: 2em"  href="/organisation" class="button button-donation">Offenes Höchhus</a>
+        <a href="/organisation" class="button button-donation">Offenes Höchhus</a>
     </div>
     <img src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/12093751/DSF0362-scaled.jpg" />
 </div>
