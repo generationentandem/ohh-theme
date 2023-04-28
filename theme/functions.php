@@ -140,3 +140,42 @@ add_action( 'admin_enqueue_scripts', 'load_custom_script' );
 function load_custom_script() {
     wp_enqueue_script('custom_js_script', get_bloginfo('template_url').'/public/js/custom-script.js', array('jquery'));
 }
+
+function sendportal_on_submit( $form, &$abort, $submission )
+{
+    if ( $abort === TRUE || $form->ID() !== 176 ) {
+        return;
+    }
+
+    $data = $submission->get_posted_data();
+
+    $first_name = sanitize_text_field($data['first_name']);
+    $last_name = sanitize_text_field($data['last_name']);
+    $email = sanitize_text_field($data['email']);
+
+    $response = wp_remote_post('https://mailing.generationentandem.ch/api/v1/subscribers', [
+        'headers'     => [
+            'Authorization' => 'Bearer ' . 'ArZCmcaoH7BD3hbq5NDlaWtny9FPIIzB',
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
+        ],
+        'body' => json_encode([
+            'email' => "$email",
+
+        ]),
+    ]);
+
+    error_log( 'MY STUFF: ' . print_r( $response, true ) );
+
+    if ( is_wp_error($response) ) {
+        $abort = TRUE;
+
+        $body = wp_remote_retrieve_body($response);
+        $result = json_decode($body);
+
+        $submission->set_response($result->error);
+        $submission->set_status('api_failed');
+    }
+}
+
+add_action('wpcf7_before_send_mail', 'sendportal_on_submit', 10, 3);
