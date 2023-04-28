@@ -164,7 +164,7 @@ ul.menu {
     width: 100%;
     display: flex;
     @include breakpoint(normal) {
-        align-items: baseline;
+        align-items: flex-end;
     }
     align-items: center;
     flex-wrap: wrap;
@@ -179,6 +179,10 @@ ul.menu {
     .menu-main-container,
     .menu-main-search {
         flex-basis: calc(50% - 135px);
+    }
+
+    .menu-main-search {
+        margin-bottom: 6px !important;
     }
 }
 
