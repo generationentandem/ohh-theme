@@ -163,6 +163,7 @@ function sendportal_on_submit( $form, &$abort, $submission )
             'first_name' => $first_name,
             'last_name' => $last_name,
             'email' => "$email",
+            'tags' => [28]
         ]),
     ]);
 
