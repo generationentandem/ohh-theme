@@ -31,7 +31,7 @@ $classes = 'card post-card ' . (($featured)?$featured:'');
 		<?php if ( ! $has_thumbnail && get_post()->post_type != 'page' && strlen( $title ) < 100 ) { ?>
 			<div class="card-excerpt" itemprop="description">
 				<?php
-				    echo $post['excerpt']['rendered'];
+				    echo str_replace(["<p>", "</p>", "\n"], "", $post['excerpt']['rendered']);
                 ?>
 			</div>
 			<?php
