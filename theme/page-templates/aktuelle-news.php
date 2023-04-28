@@ -53,30 +53,24 @@ get_header();
 <main>
     <div class="singular-container">
         <article id="post-<?php echo $news['id'] ?>" <?php post_class(); ?>>
-            <section class="entry-header">
+            <header class="entry-header">
                 <div class="post-wrapper">
-                    <a href="/programm" class="button info hollow">
-                        « Zur Übersicht
-                    </a>
-                    <header>
-                        <h1 class="entry-title und_eventpost-title alignwide">
-                            <?php echo $news['title']['rendered'] ?>
-                        </h1>
-                    </header>
+                    <h1 class="entry-title und_eventpost-title alignwide">
+                        <?php echo $news['title']['rendered'] ?>
+                    </h1>
                     <?php echo str_replace('<p>', '<p class="lead">', $news['excerpt']['rendered']) ?>
+                </div>
+            </header>
 
-                    <div class="und_eventpost-meta">
-                        <div class="und_eventpost-metablock und_eventpost-meta_desc" style="margin: 0">
-                            <!--<h2 class="h3">Was?</h2>-->
-                            <div class="entry-content">
-                                <div class="post-wrapper" style="padding: 0px">
-                                    <?php echo $news['content']['rendered'] ?>
-                                </div>
-                            </div>
+            <div class="und_eventpost-meta">
+                <div class="und_eventpost-metablock und_eventpost-meta_desc" style="margin: 0">
+                    <div class="entry-content">
+                        <div class="post-wrapper" style="padding: 0px">
+                            <?php echo $news['content']['rendered'] ?>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </article>
     </div>
 </main>
