@@ -62,13 +62,9 @@ get_header();
                 </div>
             </header>
 
-            <div class="und_eventpost-meta">
-                <div class="und_eventpost-metablock und_eventpost-meta_desc" style="margin: 0">
-                    <div class="entry-content">
-                        <div class="post-wrapper" style="padding: 0px">
-                            <?php echo $news['content']['rendered'] ?>
-                        </div>
-                    </div>
+            <div class="entry-content">
+                <div class="post-wrapper" style="padding: 0px">
+                    <?php echo $news['content']['rendered'] ?>
                 </div>
             </div>
         </article>
