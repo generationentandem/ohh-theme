@@ -26,7 +26,7 @@
                         <div class="site-title">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-                                <img style="margin-right: 2em" src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/21133828/Logo-Hoechhus-weiss.png" alt="Logo Offenes Höchhus">
+                                <img src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/21133828/Logo-Hoechhus-weiss.png" alt="Logo Offenes Höchhus">
                                 <h1>Offenes Höchhus</h1>
                             </a>
                         </div>
