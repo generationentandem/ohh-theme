@@ -32,27 +32,21 @@ $news = json_decode($response['body'], true);
 
 /** Events sortieren **/
 function bubblesort($array, $length, $order){
-    for ($i = ($length - 1); $i >= 0; $i--)
-    {
-        for ($j = 1; $j <= $i; $j++)
-        {
-            if($order == '>'){
-                if ($array[$j-1]->start > $array[$j]->start)
-                {
+    for ($i = ($length - 1); $i >= 0; $i--) {
+        for ($j = 1; $j <= $i; $j++) {
+            if($order == '>') {
+                if ($array[$j-1]['acf']['und_event_timetable'][0]['und_event_timetable_instancestart'] > $array[$j]['acf']['und_event_timetable'][0]['und_event_timetable_instancestart']) {
+                    $temp = $array[$j-1];
+                    $array[$j-1] = $array[$j];
+                    $array[$j] = $temp;
+                }
+            } else if($order == '<') {
+                if ($array[$j-1]['acf']['und_event_timetable'][0]['und_event_timetable_instancestart'] < $array[$j]['acf']['und_event_timetable'][0]['und_event_timetable_instancestart']) {
                     $temp = $array[$j-1];
                     $array[$j-1] = $array[$j];
                     $array[$j] = $temp;
                 }
             }
-            else if($order == '<'){
-                if ($array[$j-1]->start < $array[$j]->start)
-                {
-                    $temp = $array[$j-1];
-                    $array[$j-1] = $array[$j];
-                    $array[$j] = $temp;
-                }
-            }
-
         }
     }
     return $array;
