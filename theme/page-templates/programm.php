@@ -14,7 +14,7 @@ $args = [
         'method' => 'GET',
     ]
 ];
-$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18858&_embed', $args);
+$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18874&_embed', $args);
 $events = json_decode($response['body'], true);
 
 $future_instances = [];
