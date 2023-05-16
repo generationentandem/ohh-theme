@@ -14,7 +14,8 @@ $args = [
         'method' => 'GET',
     ]
 ];
-$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18874&_embed', $args);
+
+$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18874&_embed&per_page=100', $args);
 $events = json_decode($response['body'], true);
 
 $future_instances = [];
@@ -66,11 +67,14 @@ function bubblesort($array, $length, $order){
         <h2 class="title-tile f19_heading" style="border-bottom: 6px solid #0a0a0a;">Programm</h2>
         <?php // add Events here
             $future_instances = bubblesort($future_instances, sizeof($future_instances), '>');
-
+            $i = 0;
             foreach ($future_instances as $future_instance) {
-                set_query_var('und_event_instance', $future_instance);
-                get_template_part('template-parts/block/und-tile-und_eventpost');
-                wp_reset_postdata();
+                if($i < 12) {
+                    set_query_var('und_event_instance', $future_instance);
+                    get_template_part('template-parts/block/und-tile-und_eventpost');
+                    wp_reset_postdata();
+                }
+                $i++;
             }
 
             if (empty($future_instances)) {
