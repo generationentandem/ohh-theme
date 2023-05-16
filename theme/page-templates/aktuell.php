@@ -15,7 +15,7 @@ $args = [
 ];
 
 // Alle Events von generationentandem.ch abfragen
-$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18874&_embed', $args);
+$response = wp_remote_request('https://www.generationentandem.ch/wp-json/wp/v2/und_eventpost?und_eventcat=18874&_embed&per_page=100', $args);
 $events = json_decode($response['body'], true);
 
 $future_instances = [];
