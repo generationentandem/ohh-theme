@@ -61,7 +61,7 @@ function bubblesort($array, $length, $order){
         </p>
         <a href="/organisation" class="button button-donation">Offenes Höchhus</a>
     </div>
-    <img src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/04/12093751/DSF0362-scaled.jpg" />
+    <img src="https://cdn-und.s3.eu-central-1.amazonaws.com/images/2023/07/03074233/R5__9546.jpg" />
 </div>
 
 <main>
